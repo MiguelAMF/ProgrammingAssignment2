@@ -1,11 +1,11 @@
-# makeCacheMatrix creates a special matrix object that can cache its inverse
-# it works as a function containing a list of functions
+# makeCacheMatrix creates a special matrix object that can cache its inverse.
+# it works as a function containing a list of functions.
 # it contains the following functions:
-# setmatrix: sets the matrix
-# getmatrix: returns the matrix
-# setinverse: sets the inverse of the matrix. This value is calculeted with cacheSolve
-# getinverse: returns the inverse function previously stored by cacheSolve in setinverse
-# s is the variable were the inverse matrix will be stored
+# setmatrix: sets the matrix.
+# getmatrix: returns the matrix.
+# setinverse: sets the inverse of the matrix. This value is calculeted with cacheSolve.
+# getinverse: returns the inverse function previously stored by cacheSolve in setinverse.
+# s is the variable were the inverse matrix will be stored.
 
 makeCacheMatrix <- function(x = numeric()) {
   s <- NULL
@@ -19,7 +19,9 @@ makeCacheMatrix <- function(x = numeric()) {
   list(setmatrix = setmatrix, getmatrix = getmatrix, setinverse = setinverse, getinverse = getinverse)
 }
 
-# cacheSolve functions finds the inverse matrix of the matrix stored in "makeCacheMatrix"
+# cacheSolve functions calculates the inverse matrix of the matrix stored in "makeCacheMatrix".
+# cacheSolve stores the value in the cache. However if the value is already in the cache it does not
+# perform the calculation.
 
 cacheSolve <- function(x, ...) {
   s <- x$getinverse()       # brings the inverted matrix from "makeCacheMatrix" if exist
@@ -36,4 +38,3 @@ cacheSolve <- function(x, ...) {
 }
 
 # *I changed this from the example code of "makeVector" in order to avoid negatives that may be confusing
-
