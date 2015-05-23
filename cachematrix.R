@@ -37,4 +37,4 @@ cacheSolve <- function(x, ...) {
   }
 }
 
-# *I changed this from the example code of "makeVector" in order to avoid negatives that may be confusing
+# *I changed this from the example code of "makeVector" in order to avoid negatives that may be misleading.
